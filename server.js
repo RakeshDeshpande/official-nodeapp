@@ -23,10 +23,10 @@ app.get('/', (req, res) => {
 
 });
 
-app.use('/', (req, res, next) => {
-    res.render('maintenance.hbs');
-
-});
+//app.use('/', (req, res, next) => {
+//  res.render('maintenance.hbs');
+//next();
+//});
 
 //app.get('/maintenance', (req, res) => {
 //  res.send('Maintenance');
@@ -39,8 +39,15 @@ app.get('/about', (req, res) => {
     });
 });
 
+app.get('/projects', (req, res) => {
+
+    res.render('projects.hbs', {
+
+        PageTitle: "Projects"
+    });
+
+});
 
 app.listen(port, () => {
     console.log(`Port is ${port}`);
-
 });
